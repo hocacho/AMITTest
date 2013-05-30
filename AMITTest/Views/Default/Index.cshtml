@@ -1,0 +1,77 @@
+﻿@{
+	ViewBag.Title = "AMIT Test Page Edit";
+}
+<style>
+	#textContentEditArea {
+		width: 75%;
+		height: 250px;
+	}
+
+	#errorContainer { display: none; }
+</style>
+@*<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2.js"> </script>*@
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"> </script>
+@*<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jStorage/0.3.0/jstorage.min.js"> </script>*@
+<script type="text/javascript">
+//	$(function() {
+//		if ($.jStorage.storageAvailable()) {
+//			var storageKey = 'AMITTESTCONTENT';
+//			var testContent = $.jStorage.get(storageKey, false);
+//			if (testContent) {
+//				// hide edit container
+//				$('#contentEditContainer').hide();
+//				// append test content to display container and display
+//				$('#textContent').text(testContent);
+//				$('#contentDisplayContainer').show();
+//			} else {
+//				// hide display container
+//				$('#contentDisplayContainer').hide();
+//				// show edit container
+//				$('#contentEditContainer').show();
+//			}
+//			;
+//			$('#textContentEditSaveButton').click(function() {
+//				// Get content from text area and save into localstorage
+//				var text = $('#textContentEditArea').val();
+//				$.jStorage.set(storageKey, text);
+//				// reload the page
+//				location.reload();
+//			});
+//			$('#textContentEditButton').click(function() {
+//				// Get content from localstorage display in textarea
+//				$('#textContentEditArea').text(testContent);
+//				// show edit container
+//				$('#contentEditContainer').show();
+//				// hide display container
+//				$('#contentDisplayContainer').hide();
+//			});
+//		} else {
+//			$('div[id^=content]').hide();
+//			$('#errorContainer').show();
+//		}
+//	});
+</script>
+	
+<h1>
+	AMIT Test Page
+</h1>
+<div id="contentEditContainer">
+	<h3>
+		Edit AMIT Test Content
+	</h3>
+	<p>
+		Enter test AMIT content in the textarea below, click
+		<em>"Display"</em>
+		button to refresh this page and render input text as HTML content.
+	</p>
+	<ul>
+		<li>
+			NOTE: The content is saved in local storage, clearing the cache will delete
+			the saved test content.
+		</li>
+	</ul>
+	<form method="POST" action="/default/display">
+		<textarea id="textContentEditArea" name="inputText"></textarea>
+		<input type="submit" value="Display" />
+	</form>
+</div>
