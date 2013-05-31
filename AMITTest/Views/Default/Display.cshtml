@@ -9,6 +9,6 @@
 	<p>
 		Click <em>"Edit Test Content"</em> link to edit the content displayed below.
 	</p>
-	<div id="textContent">@HttpUtility.HtmlEncode(ViewBag.displayText)</div>
+	<div id="textContent">@ViewBag.displayText</div>
 	@Html.ActionLink("Edit Test Content", "index")
 </div>

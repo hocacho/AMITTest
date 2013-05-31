@@ -15,7 +15,7 @@ namespace AMITTest.Controllers
 		[HttpPost]
 		public ActionResult Display(string inputText)
 		{
-			ViewBag.displayText = inputText;
+			ViewBag.displayText = new MvcHtmlString(inputText.Replace("\r\n", "</br>"));
 			return View();
 		}
     }
